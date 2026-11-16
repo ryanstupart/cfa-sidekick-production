@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GROUPME_BOT_ID = os.getenv("GROUPME_BOT_ID")
-SCHEDULE_SECRET = os.getenv("SCHEDULE_SECRET")
+SCHEDULE_SECRET = os.getenv("SCHEDULE_SECRET", "cfa-sidekick-production-2026")
 ENV = os.getenv("ENV", "production")
 
 print("Starting CFA Sidekick...")
@@ -224,166 +224,6 @@ REMEMBER
 """
 
 DAILY_AFFIRMATIONS = [
-    "Daily Affirmation: A welcoming tone matters as much as the words you say.",
-    "Daily Affirmation: The next rush is a chance to show your preparation.",
-    "Daily Affirmation: Make every guest feel seen and heard.",
-    "Daily Affirmation: A great teammate notices the details others miss.",
-    "Daily Affirmation: Be patient with yourself as you learn.",
-    "Daily Affirmation: Service improves when we communicate early.",
-    "Daily Affirmation: Your positive choices set an example.",
-    "Daily Affirmation: Bring a fresh mindset to each new shift.",
-    "Daily Affirmation: Even small tasks deserve careful attention.",
-    "Daily Affirmation: Encourage the person working beside you.",
-    "Daily Affirmation: A calm voice can make a busy moment easier.",
-    "Daily Affirmation: Make kindness part of your routine.",
-    "Daily Affirmation: You grow every time you practice a new skill.",
-    "Daily Affirmation: Be proud of helping the team succeed.",
-    "Daily Affirmation: Stay present for the guest in front of you.",
-    "Daily Affirmation: Use feedback as a path to improvement.",
-    "Daily Affirmation: A well-prepared station helps everyone.",
-    "Daily Affirmation: One thoughtful question can prevent confusion.",
-    "Daily Affirmation: Your attention can turn a mistake into a lesson.",
-    "Daily Affirmation: The best teamwork begins with respect.",
-    "Daily Affirmation: Let your actions reflect your values.",
-    "Daily Affirmation: Show gratitude for the people around you.",
-    "Daily Affirmation: Every shift is an opportunity to build confidence.",
-    "Daily Affirmation: Take a moment to recognize a teammate's effort.",
-    "Daily Affirmation: Good service includes a willingness to listen.",
-    "Daily Affirmation: When plans change, stay flexible.",
-    "Daily Affirmation: A strong finish starts with consistent effort.",
-    "Daily Affirmation: Create a welcoming moment for the next guest.",
-    "Daily Affirmation: You can make progress without rushing.",
-    "Daily Affirmation: Help keep the team organized and ready.",
-    "Daily Affirmation: Choose a respectful response under pressure.",
-    "Daily Affirmation: Great habits are built one repetition at a time.",
-    "Daily Affirmation: The little things are part of the big picture.",
-    "Daily Affirmation: Make your next decision a thoughtful one.",
-    "Daily Affirmation: Support your team with clear communication.",
-    "Daily Affirmation: Your patience helps create a better environment.",
-    "Daily Affirmation: A positive example is a powerful influence.",
-    "Daily Affirmation: Learn from yesterday and focus on today.",
-    "Daily Affirmation: Bring care and attention to every order.",
-    "Daily Affirmation: Let your next interaction show genuine hospitality.",
-    "Daily Affirmation: Trust grows when people follow through.",
-    "Daily Affirmation: Ask for help when you need it.",
-    "Daily Affirmation: Offer help when you can give it.",
-    "Daily Affirmation: Every role is important to the guest experience.",
-    "Daily Affirmation: Make time to acknowledge a job well done.",
-    "Daily Affirmation: A good shift is built through cooperation.",
-    "Daily Affirmation: You can improve a process by paying attention.",
-    "Daily Affirmation: Approach challenges with curiosity.",
-    "Daily Affirmation: Respect for teammates makes the work better.",
-    "Daily Affirmation: The next small improvement starts with you.",
-    "Daily Affirmation: Take pride in being ready when needed.",
-    "Daily Affirmation: Be the teammate you would want beside you.",
-    "Daily Affirmation: Make space for learning during a busy day.",
-    "Daily Affirmation: The guest may remember your kindness most.",
-    "Daily Affirmation: Good communication prevents unnecessary stress.",
-    "Daily Affirmation: Bring your best attitude to the next task.",
-    "Daily Affirmation: A difficult moment does not define your whole day.",
-    "Daily Affirmation: Every careful step helps deliver quality.",
-    "Daily Affirmation: Your willingness to adapt is valuable.",
-    "Daily Affirmation: Focus on serving well, one order at a time.",
-    "Daily Affirmation: Share what you know with patience.",
-    "Daily Affirmation: Great teamwork includes giving others credit.",
-    "Daily Affirmation: The work you do behind the scenes matters.",
-    "Daily Affirmation: Stay focused and trust your training.",
-    "Daily Affirmation: A simple thank-you strengthens a team.",
-    "Daily Affirmation: You can be confident and still ask questions.",
-    "Daily Affirmation: Take a fresh approach when something isn't working.",
-    "Daily Affirmation: Your care helps create consistency.",
-    "Daily Affirmation: Show up with a spirit of cooperation.",
-    "Daily Affirmation: The next shift is another chance to improve.",
-    "Daily Affirmation: Look for one way to make someone's day easier.",
-    "Daily Affirmation: A steady attitude helps others stay steady.",
-    "Daily Affirmation: Make hospitality a habit, not an exception.",
-    "Daily Affirmation: A thoughtful handoff shows respect.",
-    "Daily Affirmation: Keep growing through practice and reflection.",
-    "Daily Affirmation: Your example can inspire a teammate.",
-    "Daily Affirmation: Finish each task with care.",
-    "Daily Affirmation: Choose to make the team stronger today.",
-    "Daily Affirmation: Every guest interaction is an opportunity to serve.",
-    "Daily Affirmation: End the day with gratitude for what you learned.",
-    "Daily Affirmation: Every guest deserves to feel welcomed.",
-    "Daily Affirmation: Your calm attitude can steady a busy shift.",
-    "Daily Affirmation: Help a teammate before they have to ask.",
-    "Daily Affirmation: Great service begins with listening.",
-    "Daily Affirmation: A kind word can change someone's day.",
-    "Daily Affirmation: Practice makes difficult tasks easier.",
-    "Daily Affirmation: Focus on progress, not perfection.",
-    "Daily Affirmation: A good handoff helps the whole team.",
-    "Daily Affirmation: Today is another chance to grow.",
-    "Daily Affirmation: Your preparation creates confidence.",
-    "Daily Affirmation: Take pride in the little details.",
-    "Daily Affirmation: Clear communication builds trust.",
-    "Daily Affirmation: Your effort makes a real difference.",
-    "Daily Affirmation: Stay curious and keep learning.",
-    "Daily Affirmation: Show patience when the rush begins.",
-    "Daily Affirmation: Each guest interaction is a fresh start.",
-    "Daily Affirmation: Good habits build great teams.",
-    "Daily Affirmation: Make room for kindness during busy moments.",
-    "Daily Affirmation: Your reliability matters.",
-    "Daily Affirmation: Be willing to learn from feedback.",
-    "Daily Affirmation: Celebrate small improvements.",
-    "Daily Affirmation: Lead through your actions.",
-    "Daily Affirmation: Choose a solution-focused attitude.",
-    "Daily Affirmation: Every shift teaches something valuable.",
-    "Daily Affirmation: Bring care to routine tasks.",
-    "Daily Affirmation: A thoughtful response is stronger than a rushed reaction.",
-    "Daily Affirmation: You can encourage someone today.",
-    "Daily Affirmation: Notice where your team needs help.",
-    "Daily Affirmation: Hospitality is about people.",
-    "Daily Affirmation: Give each task your attention.",
-    "Daily Affirmation: Finish strong and with purpose.",
-    "Daily Affirmation: Your professionalism shows under pressure.",
-    "Daily Affirmation: Respect makes teamwork easier.",
-    "Daily Affirmation: You can make a hard day better.",
-    "Daily Affirmation: Growth begins with trying.",
-    "Daily Affirmation: Keep your words constructive.",
-    "Daily Affirmation: Patience and quality go together.",
-    "Daily Affirmation: A smile can be meaningful.",
-    "Daily Affirmation: Your best effort is worth giving.",
-    "Daily Affirmation: Stay flexible and ready to help.",
-    "Daily Affirmation: Careful work prevents avoidable mistakes.",
-    "Daily Affirmation: Thank a teammate who helped you.",
-    "Daily Affirmation: The next guest deserves your best.",
-    "Daily Affirmation: Show up ready to contribute.",
-    "Daily Affirmation: Good teamwork takes everyone.",
-    "Daily Affirmation: Take ownership and keep moving.",
-    "Daily Affirmation: Learn one new thing today.",
-    "Daily Affirmation: A steady pace can beat a frantic rush.",
-    "Daily Affirmation: Every role contributes to great service.",
-    "Daily Affirmation: Choose encouragement over criticism.",
-    "Daily Affirmation: Small moments create lasting impressions.",
-    "Daily Affirmation: Trust is earned through consistency.",
-    "Daily Affirmation: You are capable of improving.",
-    "Daily Affirmation: Serve with confidence and humility.",
-    "Daily Affirmation: Make your station better for the next person.",
-    "Daily Affirmation: Stay focused on what matters.",
-    "Daily Affirmation: Recognize your progress today.",
-    "Daily Affirmation: Listen before you respond.",
-    "Daily Affirmation: Support someone who is learning.",
-    "Daily Affirmation: Your attitude can lift the whole team.",
-    "Daily Affirmation: Treat people with dignity.",
-    "Daily Affirmation: Keep your standards high and your tone kind.",
-    "Daily Affirmation: A challenge is an opportunity to practice.",
-    "Daily Affirmation: Good service starts with preparation.",
-    "Daily Affirmation: Make every interaction count.",
-    "Daily Affirmation: Bring positive energy to the team.",
-    "Daily Affirmation: Your care is part of the guest experience.",
-    "Daily Affirmation: Stay composed and communicate.",
-    "Daily Affirmation: Build confidence one shift at a time.",
-    "Daily Affirmation: Take pride in helping others succeed.",
-    "Daily Affirmation: Be thoughtful even when you're busy.",
-    "Daily Affirmation: Make today a little better than yesterday.",
-    "Daily Affirmation: Your contribution is valuable.",
-    "Daily Affirmation: Keep improving the way you serve.",
-    "Daily Affirmation: One small kindness can have a big impact.",
-    "Daily Affirmation: Be dependable in the details.",
-    "Daily Affirmation: Help create a welcoming workplace.",
-    "Daily Affirmation: Take time to appreciate a team win.",
-    "Daily Affirmation: You can reset your mindset at any moment.",
-    "Daily Affirmation: Strong teams support each other.",
     "Daily Affirmation: Show up with purpose. Small moments of consistency create big results.",
     "Daily Affirmation: You do not need to be perfect to make a positive difference today.",
     "Daily Affirmation: A calm attitude and steady effort can change the entire shift.",
@@ -424,7 +264,6 @@ DAILY_AFFIRMATIONS = [
     "Daily Affirmation: Respect, consistency, and effort never go out of style.",
     "Daily Affirmation: Keep building the version of yourself that can handle more.",
     "Daily Affirmation: Strong character shows in how you respond when no one is watching.",
-
 ]
 
 INTRO_NOTE = (
@@ -435,25 +274,6 @@ INTRO_NOTE = (
     "currently in beta. Please do not abuse or overuse me. Use me for serious or useful questions only. "
     "If you notice issues, feedback, or problems, please let the owner know. I am up to date as of "
     "April 11th, 2026."
-)
-
-
-UPDATE_ANNOUNCEMENT = "🐮 Hey team! CFA Sidekick here! I've just received an update with smarter shift-coverage recognition and a fresh bank of 200 daily affirmations. I'm still improving, and some automatic features remain in beta. Thanks for your feedback and for letting me be part of the team. Have a great day! 🐄"
-
-POLICY_ANNOUNCEMENT = (
-    "🐮 CFA Sidekick | Friendly Team Reminders\n"
-    "📱 Phones: Personal phone use is not allowed while working. If you need "
-    "to use your phone or make a call, notify a leader and step into the designated area.\n"
-    "💬 Language: No profanity or foul language at work or in the team chat.\n"
-    "📅 Coverage: If you can't work a shift, release it in HotSchedules, find "
-    "qualified coverage, and get leader approval. Unless an applicable exception "
-    "applies, you remain responsible until coverage is approved.\n"
-    "🤒 Illness: Notify a leader or Person in Charge promptly, follow food-safety "
-    "requirements, and provide a doctor's note if required under applicable policy. "
-    "Do not work with symptoms requiring exclusion.\n"
-    "🥤 Food and drinks: No eating or drinking at the drive-through window or "
-    "in designated drive-through work areas during operating hours.\n"
-    "Thank you, team. Have a great day!"
 )
 
 COVERAGE_REMINDER = (
@@ -482,18 +302,41 @@ PROFANITY_WORDS = [
     "no mms", "wey", "guey", "vale madre", "vale madres", "chingon", "chingón"
 ]
 
-def is_coverage_trigger(text: str) -> bool:
-    t = text.lower().replace("’", "'")
-    t = re.sub(r"\b(tmr|tmrw|2morrow)\b", "tomorrow", t)
-    t = re.sub(r"\b(tdy|2day)\b", "today", t)
-    t = re.sub(r"\s+", " ", t)
-    day = r"(?:today|tomorrow|tonight|mon(?:day)?|tues?(?:day)?|wed(?:nesday)?|thu(?:rs(?:day)?)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?)"
-    times = r"\b\d{1,2}(?::\d{2})?\s*(?:-|–|—|to)\s*\d{1,2}(?::\d{2})?\b"
-    context = rf"(?:\b(?:shift|work|schedule|hours|{day})\b|{times})"
-    request = r"\b(?:anyone|anybody|someone|somebody)\b.{0,70}\b(?:take|cover|swap|switch|trade|pick up|pickup|work)\b|\b(?:need coverage|cover my|take my|swap my|switch my|trade my|pick up my|pickup my|shift covered)\b"
-    inability = r"\b(?:i\s+)?(?:can't|cant|cannot|won't|wont|unable to|not able to)\s+(?:work|make|come|do|attend)\b"
-    return bool(re.search(request, t) or (re.search(inability, t) and re.search(context, t)))
-
+COVERAGE_PATTERNS = [
+    r"\bi can[’']?t make my shift\b",
+    r"\bi cant make my shift\b",
+    r"\bi can[’']?t make my shift today\b",
+    r"\bi cant make my shift today\b",
+    r"\bi can[’']?t make my shift tomorrow\b",
+    r"\bi cant make my shift tomorrow\b",
+    r"\bi can[’']?t make it\b",
+    r"\bi cant make it\b",
+    r"\bi can[’']?t make it today\b",
+    r"\bi cant make it today\b",
+    r"\bi can[’']?t make it tomorrow\b",
+    r"\bi cant make it tomorrow\b",
+    r"\bi won[’']?t be able to make my shift\b",
+    r"\bi wont be able to make my shift\b",
+    r"\bi won[’']?t be able to make my shift today\b",
+    r"\bi wont be able to make my shift today\b",
+    r"\bi won[’']?t be able to make my shift tomorrow\b",
+    r"\bi wont be able to make my shift tomorrow\b",
+    r"\bi won[’']?t be able to make it\b",
+    r"\bi wont be able to make it\b",
+    r"\bi won[’']?t be able to make it today\b",
+    r"\bi wont be able to make it today\b",
+    r"\bi won[’']?t be able to make it tomorrow\b",
+    r"\bi wont be able to make it tomorrow\b",
+    r"\bcan someone cover me\b",
+    r"\bcan someone cover me today\b",
+    r"\bcan someone cover me tomorrow\b",
+    r"\bcan someone cover my shift\b",
+    r"\bcan someone cover my shift today\b",
+    r"\bcan someone cover my shift tomorrow\b",
+    r"\bneed coverage\b",
+    r"\bneed coverage today\b",
+    r"\bneed coverage tomorrow\b",
+]
 
 SICK_PATTERNS = [
     r"\bi[’']?m sick\b",
@@ -541,7 +384,7 @@ def matches_patterns(text: str, patterns: list[str]) -> bool:
 
 def contains_profanity(text: str) -> bool:
     lower = text.lower()
-    return any(re.search(r"(?<!\w)" + re.escape(word) + r"(?!\w)", lower) for word in PROFANITY_WORDS)
+    return any(word in lower for word in PROFANITY_WORDS)
 
 @app.route("/", methods=["GET", "HEAD"])
 def health_check():
@@ -554,7 +397,7 @@ def groupme_callback():
         return "groupme_callback is alive", 200
 
     data = request.json or {}
-    # Avoid logging team member messages.
+    print("Received callback payload:", data)
 
     text = data.get("text", "") or ""
     sender_type = data.get("sender_type", "")
@@ -573,7 +416,7 @@ def groupme_callback():
         send_groupme_message(SICK_REMINDER)
         return "ok", 200
 
-    if is_coverage_trigger(text):
+    if matches_patterns(text, COVERAGE_PATTERNS):
         send_groupme_message(COVERAGE_REMINDER)
         return "ok", 200
 
@@ -581,7 +424,7 @@ def groupme_callback():
         return "ok", 200
 
     user_question = text[len("cow:"):].strip()
-
+    print(f"User question: {user_question}")
 
     if not OPENAI_API_KEY:
         send_groupme_message("CFA Sidekick error: OPENAI_API_KEY missing.")
@@ -598,7 +441,7 @@ def groupme_callback():
         )
 
         ai_response = completion.choices[0].message.content
-
+        print("AI response:", ai_response)
         send_groupme_message(ai_response)
 
     except Exception as e:
@@ -632,23 +475,6 @@ def scheduled_intro():
         return "Unauthorized", 401
 
     send_groupme_message(INTRO_NOTE)
-    return "OK", 200
-
-
-@app.route("/scheduled/update-announcement", methods=["GET"])
-def scheduled_update_announcement():
-    token = request.args.get("token", "")
-    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
-        return "Unauthorized", 401
-    send_groupme_message(UPDATE_ANNOUNCEMENT)
-    return "OK", 200
-
-@app.route("/scheduled/policy-reminders", methods=["GET"])
-def scheduled_policy_reminders():
-    token = request.args.get("token", "")
-    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
-        return "Unauthorized", 401
-    send_groupme_message(POLICY_ANNOUNCEMENT)
     return "OK", 200
 
 if __name__ == "__main__":
