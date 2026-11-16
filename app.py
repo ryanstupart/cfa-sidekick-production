@@ -1,7 +1,6 @@
 import os
 import re
 import random
-import hmac
 from flask import Flask, request
 from openai import OpenAI
 import requests
@@ -14,7 +13,7 @@ app = Flask(__name__)
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GROUPME_BOT_ID = os.getenv("GROUPME_BOT_ID")
-SCHEDULE_SECRET = (os.getenv("SCHEDULE_SECRET") or "").strip()
+SCHEDULE_SECRET = os.getenv("SCHEDULE_SECRET")
 ENV = os.getenv("ENV", "production")
 
 print("Starting CFA Sidekick...")
@@ -610,32 +609,12 @@ def groupme_callback():
 
     return "ok", 200
 
-def scheduled_authorized():
-    """Check the current Render setting, tolerating accidental surrounding spaces."""
-    configured = (os.getenv("SCHEDULE_SECRET") or "").strip()
-    supplied = (request.args.get("token") or "").strip()
-    if not configured:
-        app.logger.error("Scheduled request rejected: SCHEDULE_SECRET is missing")
-        return False
-    if not hmac.compare_digest(supplied, configured):
-        app.logger.warning("Scheduled request rejected: token mismatch (no token logged)")
-        return False
-    return True
-
-
-@app.route("/health/scheduler", methods=["GET"])
-def scheduler_health():
-    """Non-secret diagnostics for Render deployment and scheduler configuration."""
-    configured = bool((os.getenv("SCHEDULE_SECRET") or "").strip())
-    return {"service": "cfa-sidekick-production", "scheduler_configured": configured, "announcement_route": True}, 200
-
-
 @app.route("/scheduled/send", methods=["GET"])
 def scheduled_send():
     token = request.args.get("token", "")
     kind = (request.args.get("kind", "") or "").lower().strip()
 
-    if not scheduled_authorized():
+    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
         return "Unauthorized", 401
 
     if kind == "affirmation":
@@ -649,7 +628,7 @@ def scheduled_send():
 @app.route("/scheduled/intro", methods=["GET"])
 def scheduled_intro():
     token = request.args.get("token", "")
-    if not scheduled_authorized():
+    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
         return "Unauthorized", 401
 
     send_groupme_message(INTRO_NOTE)
@@ -659,7 +638,7 @@ def scheduled_intro():
 @app.route("/scheduled/update-announcement", methods=["GET"])
 def scheduled_update_announcement():
     token = request.args.get("token", "")
-    if not scheduled_authorized():
+    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
         return "Unauthorized", 401
     send_groupme_message(UPDATE_ANNOUNCEMENT)
     return "OK", 200
@@ -667,7 +646,7 @@ def scheduled_update_announcement():
 @app.route("/scheduled/policy-reminders", methods=["GET"])
 def scheduled_policy_reminders():
     token = request.args.get("token", "")
-    if not scheduled_authorized():
+    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
         return "Unauthorized", 401
     send_groupme_message(POLICY_ANNOUNCEMENT)
     return "OK", 200
