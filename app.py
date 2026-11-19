@@ -461,7 +461,7 @@ SCHEDULE_RELEASE_NOV_22_28 = (
     "Please take a moment to review your scheduled shifts and plan accordingly, especially with Thanksgiving week approaching. 🦃\n"
     "⏰ Remember to keep your availability updated and submit future time-off requests through HotSchedules as early as possible.\n"
     "📱 As a friendly reminder, texting a leader does not count as an official time-off request. All requests must be submitted through HotSchedules and approved.\n"
-    "Thank you for your hard work and flexibility! Let's have a great week, team! 🐄❤️"
+    "🦃 As Thanksgiving approaches, we want to take a moment to thank each of you for your hard work, dedication, and teamwork. We're grateful to have you as part of our team! Wishing you and your families a wonderful Thanksgiving week ahead! ❤️"
 )
 
 HOTSCHEDULES_ANNOUNCEMENT = (
