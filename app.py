@@ -455,6 +455,14 @@ POLICY_ANNOUNCEMENT = (
     "Thank you, team. Have a great day!"
 )
 
+HOTSCHEDULES_ANNOUNCEMENT = (
+    "🐮 CFA Sidekick | HotSchedules Reminder\n"
+    "📅 Team, please, please, please keep your availability up to date in HotSchedules and submit all time-off requests there. It makes scheduling easier for everyone and helps our leaders plan ahead.\n"
+    "⏰ Request time off as far in advance as possible. Certain dates may be blocked due to business needs or a high number of requests. If a date is blocked, you can see the reason in HotSchedules.\n"
+    "📱 Important: Texting a leader does NOT count as submitting a time-off request. Please enter your request in HotSchedules and wait for approval before assuming you're off.\n"
+    "Thank you for helping us build a fair, organized schedule! 🐄"
+)
+
 COVERAGE_REMINDER = (
     "Coverage Reminder: Team members are responsible for finding coverage by releasing the shift in HotSchedules, "
     "asking in GroupMe, and securing leader approval. Coverage must match the exact start time and required skill set. "
@@ -670,6 +678,14 @@ def scheduled_policy_reminders():
     if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
         return "Unauthorized", 401
     send_groupme_message(POLICY_ANNOUNCEMENT)
+    return "OK", 200
+
+@app.route("/scheduled/hotschedules-reminder", methods=["GET"])
+def scheduled_hotschedules_reminder():
+    token = request.args.get("token", "")
+    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
+        return "Unauthorized", 401
+    send_groupme_message(HOTSCHEDULES_ANNOUNCEMENT)
     return "OK", 200
 
 if __name__ == "__main__":
