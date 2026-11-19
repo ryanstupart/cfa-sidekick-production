@@ -455,6 +455,15 @@ POLICY_ANNOUNCEMENT = (
     "Thank you, team. Have a great day!"
 )
 
+SCHEDULE_RELEASE_NOV_22_28 = (
+    "🐮 CFA Sidekick | New Schedule Released!\n"
+    "📅 Hey team! The schedule for November 22–28, 2026 is now available in HotSchedules!\n"
+    "Please take a moment to review your scheduled shifts and plan accordingly, especially with Thanksgiving week approaching. 🦃\n"
+    "⏰ Remember to keep your availability updated and submit future time-off requests through HotSchedules as early as possible.\n"
+    "📱 As a friendly reminder, texting a leader does not count as an official time-off request. All requests must be submitted through HotSchedules and approved.\n"
+    "Thank you for your hard work and flexibility! Let's have a great week, team! 🐄❤️"
+)
+
 HOTSCHEDULES_ANNOUNCEMENT = (
     "🐮 CFA Sidekick | HotSchedules Reminder\n"
     "📅 Team, please, please, please keep your availability up to date and submit time-off requests through HotSchedules. This helps everyone plan schedules fairly and efficiently.\n"
@@ -687,6 +696,14 @@ def scheduled_hotschedules_reminder():
     if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
         return "Unauthorized", 401
     send_groupme_message(HOTSCHEDULES_ANNOUNCEMENT)
+    return "OK", 200
+
+@app.route("/scheduled/schedule-release-nov-22-28", methods=["GET"])
+def scheduled_schedule_release_nov_22_28():
+    token = request.args.get("token", "")
+    if not SCHEDULE_SECRET or token != SCHEDULE_SECRET:
+        return "Unauthorized", 401
+    send_groupme_message(SCHEDULE_RELEASE_NOV_22_28)
     return "OK", 200
 
 if __name__ == "__main__":
