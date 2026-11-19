@@ -457,10 +457,11 @@ POLICY_ANNOUNCEMENT = (
 
 HOTSCHEDULES_ANNOUNCEMENT = (
     "🐮 CFA Sidekick | HotSchedules Reminder\n"
-    "📅 Team, please, please, please keep your availability up to date in HotSchedules and submit all time-off requests there. It makes scheduling easier for everyone and helps our leaders plan ahead.\n"
-    "⏰ Request time off as far in advance as possible. Certain dates may be blocked due to business needs or a high number of requests. If a date is blocked, you can see the reason in HotSchedules.\n"
-    "📱 Important: Texting a leader does NOT count as submitting a time-off request. Please enter your request in HotSchedules and wait for approval before assuming you're off.\n"
-    "Thank you for helping us build a fair, organized schedule! 🐄"
+    "📅 Team, please, please, please keep your availability up to date and submit time-off requests through HotSchedules. This helps everyone plan schedules fairly and efficiently.\n"
+    "⏰ Request time off as far in advance as possible. Some dates may be blocked due to business needs or too many requests. HotSchedules shows why a date is blocked.\n"
+    "🗓️ Missed the time-off request deadline? You can mark the day as “Prefer Not to Work” in HotSchedules, but that is a preference, not an approved day off.\n"
+    "📱 Texting a leader does NOT count as a time-off request—even for a blocked date. Submit requests through HotSchedules and wait for approval. A text does not override a blocked date.\n"
+    "Thank you for helping us plan ahead! 🐄"
 )
 
 COVERAGE_REMINDER = (
